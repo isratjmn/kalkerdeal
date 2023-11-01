@@ -4,7 +4,7 @@ use App\Http\Controllers\BackendController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\userController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendController::class, 'welcome']);
@@ -23,9 +23,11 @@ Route::get('category/update/{category_id}', [CategoryController::class, 'update'
 Route::post('category/edit/{category_id}', [CategoryController::class, 'edit']);
 Route::get('category/all/restore', [CategoryController::class, 'restore_all']);
 Route::get('category/all/permanent/delete', [CategoryController::class, 'p_deleteall']);
-Route::get('user', [userController::class, 'index']);
-Route::get('user/create', [userController::class, 'create']);
-Route::post('user/insert', [userController::class, 'insert']);
+Route::get('user', [UserController::class, 'index']);
+Route::get('user/create', [UserController::class, 'create']);
+Route::post('user/insert', [UserController::class, 'insert']);
+
+Route::get('profile', [ProfileController::class, 'index']);
 
 
 Route::middleware('auth')->group(function () {

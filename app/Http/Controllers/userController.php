@@ -7,8 +7,10 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AccountCreation;
 
-class  userController extends Controller
+class  UserController extends Controller
 {
     public function index()
     {
@@ -30,7 +32,6 @@ class  userController extends Controller
             'created_at' => Carbon::now(),
             'role' => $request->role
         ]);
-        echo $user_id;
 
         if ($request->hasFile('profile_photo')) {
             // Photo Upload Start
@@ -44,6 +45,16 @@ class  userController extends Controller
             ]);
             // Database Upload Ends
         }
+        // Email Send Start
+        $info = [
+            'email' => $request->email,
+            'name' => $request->name,
+            'password' => $generated_password,
+            'role' => $request->role,
+        ];
+        Mail::to($request->email)->send(new AccountCreation($info));
+        
+        // Email Send End
         return back();
     }
 }

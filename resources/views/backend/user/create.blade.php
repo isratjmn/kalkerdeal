@@ -49,7 +49,27 @@
                                                         <label class="col-lg-2 col-md-3 col-form-label form-label-title">
                                                             Profile Photo</label>
                                                         <div class="col-md-9 col-lg-10">
-                                                            <input class="form-control" type="file" name="profile_photo">
+                                                            <style>
+                                                                .hidden {
+                                                                    visibility: hidden;
+                                                                }
+                                                            </style>
+                                                            <input class="form-control" type="file" name="profile_photo"
+                                                                onchange="showImage(this)">
+                                                            <img class="mt-3 hidden" id="profile_photo_viewer"
+                                                                src="#" alt="avatarImage" />
+                                                            <script>
+                                                                function showImage(input) {
+                                                                    if (input.files && input.files[0]) {
+                                                                        var reader = new FileReader();
+                                                                        reader.onload = function(e) {
+                                                                            $('#profile_photo_viewer').attr('src', e.target.result).width(100).height(100);
+                                                                        };
+                                                                        $('#profile_photo_viewer').removeClass('hidden');
+                                                                        reader.readAsDataURL(input.files[0]);
+                                                                    }
+                                                                }
+                                                            </script>
                                                         </div>
                                                     </div>
                                                     <div class="mb-4 row align-items-center">
