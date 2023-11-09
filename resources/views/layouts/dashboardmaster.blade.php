@@ -156,9 +156,9 @@
                                 <ul class="profile-dropdown onhover-show-div">
 
                                     <li>
-                                        <a href="{{ url('profile') }}">
+                                        <a href="{{ route('profile') }}">
                                             <i data-feather="users"></i>
-                                            <span>Profile </span>
+                                            <span>Profile</span>
                                         </a>
                                     </li>
                                     <li>

@@ -53,7 +53,6 @@ class  UserController extends Controller
             'role' => $request->role,
         ];
         Mail::to($request->email)->send(new AccountCreation($info));
-        
         // Email Send End
         return back();
     }

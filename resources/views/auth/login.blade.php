@@ -59,17 +59,43 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <div class="form-floating theme-form-floating log-in-form">
+                                    <div class="form-floating theme-form-floating log-in-form input-group">
                                         <input type="password" class="form-control @error('email') is-invalid @enderror"
                                             id="password" name="password" placeholder="Password">
                                         <label for="password">Password</label>
+                                        <button class="btn btn-outline-primary border" type="button"
+                                            id="togglePassword">
+                                            <i class="uil uil-eye-slash" style="font-size: 20px;"></i>
+                                        </button>
                                         @error('password')
                                             <small class="text-danger fw-semibold">
                                                 {{ $message }}
                                             </small>
                                         @enderror
                                     </div>
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            const togglePassword = document.querySelector('#togglePassword');
+                                            const password = document.querySelector('#password');
+
+                                            togglePassword.addEventListener('click', function() {
+                                                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                                                password.setAttribute('type', type);
+                                                // Toggle the eye icon
+                                                if (type === 'password') {
+                                                    togglePassword.innerHTML = '<i class="uil uil-eye-slash" style="font-size: 20px;"></i>';
+                                                } else {
+                                                    togglePassword.innerHTML = '<i class="uil uil-eye" style="font-size: 20px;"></i>';
+                                                }
+                                            });
+                                        });
+                                    </script>
+
+
+
                                 </div>
+
+
 
                                 <div class="col-12">
                                     <div class="forgot-box">

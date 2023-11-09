@@ -4,6 +4,7 @@ use App\Http\Controllers\BackendController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProfilleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +28,8 @@ Route::get('user', [UserController::class, 'index']);
 Route::get('user/create', [UserController::class, 'create']);
 Route::post('user/insert', [UserController::class, 'insert']);
 
-Route::get('profile', [ProfileController::class, 'index']);
+Route::get('my/profile', [ProfilleController::class, 'index'])->name('profile');
+Route::post('change/password', [ProfilleController::class, 'change_password'])->name('change.password');
 
 
 Route::middleware('auth')->group(function () {
