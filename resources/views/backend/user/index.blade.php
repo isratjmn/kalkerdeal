@@ -2,8 +2,6 @@
 @section('content')
     <!-- Container-fluid starts-->
     <div class="page-body">
-
-
         <!-- All User Table Start -->
         <div class="container-fluid">
             <div class="row">
@@ -14,7 +12,8 @@
                                 <h5>All Users</h5>
                                 <form class="d-inline-flex">
                                     <a href="{{ url('user/create') }}" class="align-items-center btn btn-theme">
-                                        <i data-feather="plus"></i>Add New Users
+                                        <i data-feather="plus"></i>
+                                        Add New Users
                                     </a>
                                 </form>
                             </div>
@@ -31,15 +30,14 @@
                                             <th>Option</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         @forelse ($users as $user)
                                             <tr>
                                                 <td class="text-center">{{ $loop->index + 1 }}</td>
                                                 <td class="text-left">
                                                     @if ($user->profile_photo)
-                                                        
-                                                        <img width="40" height="40" class="user-profile rounded-circle"
+                                                        <img width="40" height="40"
+                                                            class="user-profile rounded-circle"
                                                             src="{{ asset('uploads/avatar_photos') }}/{{ $user->profile_photo }}" />
                                                     @else
                                                         <img width="40" class="user-profile rounded-circle"

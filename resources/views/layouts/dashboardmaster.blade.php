@@ -69,27 +69,17 @@
                             <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
                             <a href="index.html">
                                 <img src="{{ asset('dashboard_asset/images/logo/1.png') }}" class="img-fluid"
-                                    alt="">
+                                    alt="img">
                             </a>
                         </div>
                     </div>
 
                     <div class="nav-right col-6 pull-right right-header p-0">
                         <ul class="nav-menus">
-                            <li>
-                                <span class="header-search">
-                                    <i class="ri-search-line"></i>
-                                </span>
-                            </li>
-                            <li>
-                                {{-- <span class="onhover-dropdown">
-                                    <div class="notification-box">
-                                        <a href="" target="_blank" class="btn btn-info">visit
-                                            site
-                                        </a>
-                                    </div>
-                                </span> --}}
-                            </li>
+                            <div>
+                                <a href="{{ route('index') }}" target="_blank" class="btn btn-primary mx-3">Visit Site</a>
+                            </div>
+
                             <li class="onhover-dropdown">
                                 <div class="notification-box">
                                     <i class="ri-notification-line"></i>
@@ -102,18 +92,6 @@
                                     </li>
                                     <li>
                                         <p>
-                                            <i class="fa fa-circle me-2 font-primary"></i>Delivery processing <span
-                                                class="pull-right">10 min.</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <i class="fa fa-circle me-2 font-success"></i>Order Complete<span
-                                                class="pull-right">1 hr</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
                                             <i class="fa fa-circle me-2 font-info"></i>Tickets Generated<span
                                                 class="pull-right">3 hr</span>
                                         </p>
@@ -121,7 +99,7 @@
                                     <li>
                                         <p>
                                             <i class="fa fa-circle me-2 font-danger"></i>Delivery Complete<span
-                                                class="pull-right">6 hr</span>
+                                                class="pull-right"></span>
                                         </p>
                                     </li>
                                     <li>
@@ -139,16 +117,20 @@
                             </li>
                             <li class="profile-nav onhover-dropdown pe-0 me-0">
                                 <div class="media profile-media">
-                                    <h2>
+                                    @if (auth()->user()->profile_photo)
+                                        <img class="user-profile rounded-circle"
+                                            src="{{ asset('uploads/avatar_photos') }}/{{ auth()->user()->profile_photo }}" />
+                                    @else
                                         {{-- {!! Avatar::create(auth()->user()->name)->toSvg() !!} --}}
                                         <img class="user-profile rounded-circle"
                                             src="{{ Avatar::create(auth()->user()->name)->toBase64() }}" />
-                                    </h2>
+                                    @endif
+
 
                                     <div class="user-name-hide media-body">
-                                        <span>{{ auth()->user()->name }}</span>
-                                        <span class="badge bg-primary text-white">{{ auth()->user()->role }}</span>
-                                        <p class="mb-0 font-roboto">{{ auth()->user()->email }}
+                                        <span>{{ auth()->user()->name }}</span> (<span
+                                            class="text-success">{{ auth()->user()->role }}</span>)
+                                        <p class="mb-0 font-roboto text-primary fw-bold">{{ auth()->user()->email }}
                                             <i class="middle ri-arrow-down-s-line"></i>
                                         </p>
                                     </div>

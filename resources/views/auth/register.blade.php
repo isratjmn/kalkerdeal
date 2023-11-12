@@ -92,7 +92,6 @@
                                                 @enderror
                                             </div>
                                         </div>
-
                                         <div class="col-12">
                                             <div class="form-floating theme-form-floating">
                                                 <input type="password" class="form-control" id="password_confirmation"
@@ -103,9 +102,20 @@
                                                         {{ $message }}
                                                     </small>
                                                 @enderror
+
                                             </div>
                                         </div>
 
+                                        <div class="col-12 justify-content-center mx-auto" style="">
+                                            <div class="form-floating theme-form-floating">
+                                                {!! NoCaptcha::display(['style' => 'width: 100%;']) !!}
+                                            </div>
+                                            @error('g-recaptcha-response')
+                                                <small class="text-danger fw-semibold">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
+                                        </div>
                                         <div class="col-12">
                                             <div class="forgot-box">
                                                 <div class="form-check ps-0 m-0 remember-box">
@@ -131,20 +141,21 @@
                                 <div class="log-in-button">
                                     <ul>
                                         <li>
-                                            <a href="https://www.google.com/" class="btn google-button w-100">
-                                                <i class="uil uil-google fs-3" style="color: #0062ff"></i>
-                                                Log In with Google
+                                            <a href="{{ route('google.redirect') }}"
+                                                class="btn py-1 google-button w-100">
+                                                <i class="uil uil-google fs-2" style="color: #0062ff"></i>
+                                                Log with Google
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.facebook.com/" class="btn google-button w-100">
-                                                <i class="uil uil-github fs-2" style="color: #000000"></i>
-                                                Log In with Github
+                                            <a href="{{ route('github.redirect') }}"
+                                                class="btn py-0 google-button w-100">
+                                                <i class="uil uil-github fs-1" style="color: #000000"></i>
+                                                Log with Github
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
-
                                 <div
                                     class="sign-up-box text-center d-flex justify-content-center align-items-center gap-2">
                                     <h4 class="fw-bold pt-2" style="font-size: 13px">Already have an account? </h4>
@@ -152,19 +163,17 @@
                                         Login Now
                                     </a>
                                 </div>
-
                             </div>
                         </div>
-
                         <div class="col-xxl-7 col-xl-6 col-lg-6"></div>
                     </div>
                 </div>
-
                 <!-- log in section end -->
             </div>
         </div>
     </section>
     <!-- login section end -->
+    {!! NoCaptcha::renderJs() !!}
 </body>
 
 </html>

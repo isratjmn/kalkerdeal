@@ -91,11 +91,7 @@
                                         });
                                     </script>
 
-
-
                                 </div>
-
-
 
                                 <div class="col-12">
                                     <div class="forgot-box">
@@ -104,7 +100,8 @@
                                                 id="flexCheckDefault" name="remember">
                                             <label class="form-check-label" for="flexCheckDefault">Remember Me</label>
                                         </div>
-                                        <a href="Do/Later" class="forgot-password">Forgot Password?</a>
+                                        <a href="{{ route('password.request') }}" class="forgot-password">Forgot
+                                            Password?</a>
                                     </div>
                                 </div>
 

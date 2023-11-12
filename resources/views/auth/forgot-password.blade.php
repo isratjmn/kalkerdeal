@@ -1,25 +1,102 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cuba admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="dashboard_asset/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="dashboard_asset/images/favicon.png" type="image/x-icon">
+    <title>Fastkart - Forgot PassWord</title>
 
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
+    <!-- Google font-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/vendors/font-awesome.css') }}">
+
+    <!-- Themify icon-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/vendors/themify.css') }}">
+
+    <!-- Feather icon css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/vendors/feather-icon.css') }}">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/vendors/bootstrap.css') }}">
+
+    <!-- App css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- forgot password start -->
+    <section class="log-in-section section-b-space">
+        <a href="" class="logo-login"><img src="{{ asset('dashboard_asset/images/logo/1.png') }}" alt="img1"
+                class="img-fluid"></a>
+        <div class="container w-100">
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-6 me-auto">
+                    <div class="log-in-box">
+                        <div class="log-in-title">
+                            <h3 class="fw-bold">Welcome To Fastkart</h3>
+                            <h4 class="fw-bold">Forgot Password</h4>
+                        </div>
+
+                        <div class="input-box">
+                            <form class="row g-4" method="POST" action="{{ route('password.email') }}">
+                                @csrf
+                                <div class="col-12">
+                                    @if ($errors->any())
+                                        <div class="alert alert-secondary">
+                                            @foreach ($errors->all() as $error)
+                                                <li>
+                                                    {{ $error }}
+                                                </li>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                    @if (session('status'))
+                                        <div class="alert alert-success">{{ session('status') }}</div>
+                                    @endif
+                                    <div class="form-floating theme-form-floating log-in-form">
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Email Address">
+                                        <label for="email">Enter Email Address</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-animation w-100 justify-content-center"
+                                        type="submit">Send</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+    <!-- forgot password end -->
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+
+    <!-- latest jquery-->
+    <script src="dashboard_asset/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="dashboard_asset/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme js-->
+    <script src="dashboard_asset/js/script.js"></script>
+</body>
+
+</html>

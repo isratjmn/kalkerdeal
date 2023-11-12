@@ -1,140 +1,3540 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fastkart">
+    <meta name="keywords" content="Fastkart">
+    <meta name="author" content="Fastkart">
+    <link rel="icon" href="{{ asset('frontend_asset') }}/images/favicon/1.png" type="image/x-icon">
+    <title>On-demand last-mile delivery</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+    <!-- bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css"
+        href="{{ asset('frontend_asset') }}/css/vendors/bootstrap.css">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <!-- wow css -->
+    <link rel="stylesheet" href="{{ asset('frontend_asset') }}/css/animate.min.css" />
 
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend_asset') }}/css/vendors/font-awesome.css">
 
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
+    <!-- feather icon css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend_asset') }}/css/vendors/feather-icon.css">
 
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend_asset') }}/css/vendors/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend_asset') }}/css/vendors/slick/slick-theme.css">
 
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
+    <!-- Iconly css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend_asset') }}/css/bulk-style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend_asset') }}/css/vendors/animate.css">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
+    <!-- Template css -->
+    <link id="color-link" rel="stylesheet" type="text/css" href="{{ asset('frontend_asset') }}/css/style.css">
+</head>
 
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
+<body class="bg-effect">
 
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
+    <!-- Loader Start -->
+    <div class="fullpage-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- Loader End -->
 
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                        <div class="flex items-center gap-4">
-                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                </svg>
-                                Sponsor
-                            </a>
+    <!-- Header Start -->
+    <header class="pb-md-4 pb-0">
+        <div class="header-top">
+            <div class="container-fluid-lg">
+                <div class="row">
+                    <div class="col-xxl-3 d-xxl-block d-none">
+                        <div class="top-left-header">
+                            <i class="iconly-Location icli text-white"></i>
+                            <span class="text-white">1418 Riverwood Drive, CA 96052, US</span>
                         </div>
                     </div>
 
-                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    <div class="col-xxl-6 col-lg-9 d-lg-block d-none">
+                        <div class="header-offer">
+                            <div class="notification-slider">
+                                <div>
+                                    <div class="timer-notification">
+                                        <h6><strong class="me-1">Welcome to Fastkart!</strong>Wrap new offers/gift
+                                            every signle day on Weekends.<strong class="ms-1">New Coupon Code: Fast024
+                                            </strong>
+
+                                        </h6>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="timer-notification">
+                                        <h6>Something you love is now on sale!
+                                            <a href="shop-left-sidebar.html" class="text-white">Buy Now
+                                                !</a>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+
+        <div class="top-nav top-header sticky-header">
+            <div class="container-fluid-lg">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navbar-top">
+                            <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+                                <span class="navbar-toggler-icon">
+                                    <i class="fa-solid fa-bars"></i>
+                                </span>
+                            </button>
+                            <a href="index.html" class="web-logo nav-logo">
+                                <img src="{{ asset('frontend_asset') }}/images/logo/1.png"
+                                    class="img-fluid blur-up lazyload" alt="">
+                            </a>
+
+                            <div class="middle-box">
+
+
+                                <div class="search-box">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control" placeholder="I'm searching for..."
+                                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <button class="btn" type="button" id="button-addon2">
+                                            <i data-feather="search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rightside-box">
+                                <div class="search-full">
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i data-feather="search" class="font-light"></i>
+                                        </span>
+                                        <input type="text" class="form-control search-type"
+                                            placeholder="Search here..">
+                                        <span class="input-group-text close-search">
+                                            <i data-feather="x" class="font-light"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul class="right-side-menu">
+                                    <li class="right-side">
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <div class="search-box">
+                                                    <i data-feather="search"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="right-side">
+                                        <a href="contact-us.html" class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <i data-feather="phone-call"></i>
+                                            </div>
+                                            <div class="delivery-detail">
+                                                <h6>24/7 Delivery</h6>
+                                                <h5>+91 888 104 2340</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="right-side">
+                                        <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">
+                                            <i data-feather="heart"></i>
+                                        </a>
+                                    </li>
+                                    <li class="right-side">
+                                        <div class="onhover-dropdown header-badge">
+                                            <button type="button" class="btn p-0 position-relative header-wishlist">
+                                                <i data-feather="shopping-cart"></i>
+                                                <span
+                                                    class="position-absolute top-0 start-100 translate-middle badge">2
+                                                    <span class="visually-hidden">unread messages</span>
+                                                </span>
+                                            </button>
+
+                                            <div class="onhover-div">
+                                                <ul class="cart-list">
+                                                    <li class="product-box-contain">
+                                                        <div class="drop-cart">
+                                                            <a href="product-left-thumbnail.html" class="drop-image">
+                                                                <img src="{{ asset('frontend_asset') }}/images/vegetable/product/1.png"
+                                                                    class="blur-up lazyload" alt="">
+                                                            </a>
+
+                                                            <div class="drop-contain">
+                                                                <a href="product-left-thumbnail.html">
+                                                                    <h5>Fantasy Crunchy Choco Chip Cookies</h5>
+                                                                </a>
+                                                                <h6><span>1 x</span> $80.58</h6>
+                                                                <button class="close-button close_button">
+                                                                    <i class="fa-solid fa-xmark"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="product-box-contain">
+                                                        <div class="drop-cart">
+                                                            <a href="product-left-thumbnail.html" class="drop-image">
+                                                                <img src="{{ asset('frontend_asset') }}/images/vegetable/product/2.png"
+                                                                    class="blur-up lazyload" alt="">
+                                                            </a>
+
+                                                            <div class="drop-contain">
+                                                                <a href="product-left-thumbnail.html">
+                                                                    <h5>Peanut Butter Bite Premium Butter Cookies 600 g
+                                                                    </h5>
+                                                                </a>
+                                                                <h6><span>1 x</span> $25.68</h6>
+                                                                <button class="close-button close_button">
+                                                                    <i class="fa-solid fa-xmark"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="price-box">
+                                                    <h5>Total :</h5>
+                                                    <h4 class="theme-color fw-bold">$106.58</h4>
+                                                </div>
+
+                                                <div class="button-group">
+                                                    <a href="cart.html" class="btn btn-sm cart-button">View Cart</a>
+                                                    <a href="checkout.html"
+                                                        class="btn btn-sm cart-button theme-bg-color
+                                                    text-white">Checkout</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="right-side onhover-dropdown">
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <i data-feather="user"></i>
+                                            </div>
+                                            <div class="delivery-detail">
+                                                <h6>Hello,</h6>
+                                                <h5>My Account</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="onhover-div onhover-div-login">
+                                            <ul class="user-box-name">
+                                                <li class="product-box-contain">
+                                                    <i></i>
+                                                    <a href="login.html">Log In</a>
+                                                </li>
+
+                                                <li class="product-box-contain">
+                                                    <a href="sign-up.html">Register</a>
+                                                </li>
+
+                                                <li class="product-box-contain">
+                                                    <a href="forgot.html">Forgot Password</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid-lg">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-nav">
+                        <div class="header-nav-left">
+                            <button class="dropdown-category">
+                                <i data-feather="align-left"></i>
+                                <span>All Categories</span>
+                            </button>
+
+                            <div class="category-dropdown">
+                                <div class="category-title">
+                                    <h5>Categories</h5>
+                                    <button type="button" class="btn p-0 close-button text-content">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+
+                                <ul class="category-list">
+                                    <li class="onhover-category-list">
+                                        <a href="shop-top-filter.html" class="category-name">
+                                            <img src="{{ asset('frontend_asset') }}/svg/1/vegetable.svg"
+                                                alt="">
+                                            <h6>Vegetables & Fruit</h6>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="onhover-category-list">
+                                        <a href="javascript:void(0)" class="category-name">
+                                            <img src="{{ asset('frontend_asset') }}/svg/1/cup.svg" alt="">
+                                            <h6>Beverages</h6>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="onhover-category-list">
+                                        <a href="javascript:void(0)" class="category-name">
+                                            <img src="{{ asset('frontend_asset') }}/svg/1/meats.svg" alt="">
+                                            <h6>Meats & Seafood</h6>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="onhover-category-list">
+                                        <a href="javascript:void(0)" class="category-name">
+                                            <img src="{{ asset('frontend_asset') }}/svg/1/breakfast.svg"
+                                                alt="">
+                                            <h6>Breakfast & Dairy</h6>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="onhover-category-list">
+                                        <a href="javascript:void(0)" class="category-name">
+                                            <img src="{{ asset('frontend_asset') }}/svg/1/frozen.svg" alt="">
+                                            <h6>Frozen Foods</h6>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="onhover-category-list">
+                                        <a href="javascript:void(0)" class="category-name">
+                                            <img src="{{ asset('frontend_asset') }}/svg/1/biscuit.svg"
+                                                alt="">
+                                            <h6>Biscuits & Snacks</h6>
+
+                                        </a>
+                                    </li>
+
+                                    <li class="onhover-category-list">
+                                        <a href="javascript:void(0)" class="category-name">
+                                            <img src="{{ asset('frontend_asset') }}/svg/1/grocery.svg"
+                                                alt="">
+                                            <h6>Grocery & Staples</h6>
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="header-nav-middle">
+                            <div class="main-nav navbar navbar-expand-xl navbar-light navbar-sticky">
+                                <div class="offcanvas offcanvas-collapse order-xl-2" id="primaryMenu">
+                                    <div class="offcanvas-header navbar-shadow">
+                                        <h5>Menu</h5>
+                                        <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item ">
+                                                <a class="nav-link" href="index.html">Home</a>
+                                            </li>
+
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="shop-top-filter.html">Shop</a>
+                                            </li>
+
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="product-left-thumbnail.html">Product</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="header-nav-right">
+                            <button class="btn deal-button" data-bs-toggle="modal" data-bs-target="#deal-box">
+                                <i data-feather="zap"></i>
+                                <span>Deal Today</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- mobile fix menu start -->
+    <div class="mobile-menu d-md-none d-block mobile-cart">
+        <ul>
+            <li class="active">
+                <a href="index.html">
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <li class="mobile-category">
+                <a href="javascript:void(0)">
+                    <i class="iconly-Category icli js-link"></i>
+                    <span>Category</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="search.html" class="search-box">
+                    <i class="iconly-Search icli"></i>
+                    <span>Search</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="wishlist.html" class="notifi-wishlist">
+                    <i class="iconly-Heart icli"></i>
+                    <span>My Wish</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="cart.html">
+                    <i class="iconly-Bag-2 icli fly-cate"></i>
+                    <span>Cart</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- mobile fix menu end -->
+
+    <!-- Home Section Start -->
+    <section class="home-section pt-2">
+        <div class="container-fluid-lg">
+            <div class="row g-4">
+                <div class="col-xl-8 ratio_65">
+                    <div class="home-contain h-100">
+                        <div class="h-100">
+                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/1.jpg"
+                                class="bg-img blur-up lazyload" alt="">
+                        </div>
+                        <div class="home-detail p-center-left w-75">
+                            <div>
+                                <h6>Exclusive offer <span>30% Off</span></h6>
+                                <h1 class="text-uppercase">Stay home & delivered your <span class="daily">Daily
+                                        Needs</span></h1>
+                                <p class="w-75 d-none d-sm-block">Vegetables contain many vitamins and minerals that
+                                    are
+                                    good for your health.</p>
+                                <button onclick="location.href = 'shop-left-sidebar.html';"
+                                    class="btn btn-animation mt-xxl-4 mt-2 home-button mend-auto">Shop Now <i
+                                        class="fa-solid fa-right-long icon"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 ratio_65">
+                    <div class="row g-4">
+                        <div class="col-xl-12 col-md-6">
+                            <div class="home-contain">
+                                <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/2.jpg"
+                                    class="bg-img blur-up lazyload" alt="">
+                                <div class="home-detail p-center-left home-p-sm w-75">
+                                    <div>
+                                        <h2 class="mt-0 text-danger">45% <span class="discount text-title">OFF</span>
+                                        </h2>
+                                        <h3 class="theme-color">Nut Collection</h3>
+                                        <p class="w-75">We deliver organic vegetables & fruits</p>
+                                        <a href="shop-left-sidebar.html" class="shop-button">Shop Now <i
+                                                class="fa-solid fa-right-long"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-6">
+                            <div class="home-contain">
+                                <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/3.jpg"
+                                    class="bg-img blur-up lazyload" alt="">
+                                <div class="home-detail p-center-left home-p-sm w-75">
+                                    <div>
+                                        <h3 class="mt-0 theme-color fw-bold">Healthy Food</h3>
+                                        <h4 class="text-danger">Organic Market</h4>
+                                        <p class="organic">Start your daily shopping with some Organic food</p>
+                                        <a href="shop-left-sidebar.html" class="shop-button">Shop Now <i
+                                                class="fa-solid fa-right-long"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+    <!-- Banner Section Start -->
+    <section class="banner-section ratio_60 wow fadeInUp">
+        <div class="container-fluid-lg">
+            <div class="banner-slider">
+                <div>
+                    <div class="banner-contain hover-effect">
+                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/4.jpg"
+                            class="bg-img blur-up lazyload" alt="">
+                        <div class="banner-details">
+                            <div class="banner-box">
+                                <h6 class="text-danger">5% OFF</h6>
+                                <h5>Hot Deals on New Items</h5>
+                                <h6 class="text-content">Daily Essentials Eggs & Dairy</h6>
+                            </div>
+                            <a href="shop-left-sidebar.html" class="banner-button text-white">Shop Now <i
+                                    class="fa-solid fa-right-long ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="banner-contain hover-effect">
+                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/5.jpg"
+                            class="bg-img blur-up lazyload" alt="">
+                        <div class="banner-details">
+                            <div class="banner-box">
+                                <h6 class="text-danger">5% OFF</h6>
+                                <h5>Buy More & Save More</h5>
+                                <h6 class="text-content">Fresh Vegetables</h6>
+                            </div>
+                            <a href="shop-left-sidebar.html" class="banner-button text-white">Shop Now <i
+                                    class="fa-solid fa-right-long ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="banner-contain hover-effect">
+                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/6.jpg"
+                            class="bg-img blur-up lazyload" alt="">
+                        <div class="banner-details">
+                            <div class="banner-box">
+                                <h6 class="text-danger">5% OFF</h6>
+                                <h5>Organic Meat Prepared</h5>
+                                <h6 class="text-content">Delivered to Your Home</h6>
+                            </div>
+                            <a href="shop-left-sidebar.html" class="banner-button text-white">Shop Now <i
+                                    class="fa-solid fa-right-long ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="banner-contain hover-effect">
+                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/7.jpg"
+                            class="bg-img blur-up lazyload" alt="">
+                        <div class="banner-details">
+                            <div class="banner-box">
+                                <h6 class="text-danger">5% OFF</h6>
+                                <h5>Buy More & Save More</h5>
+                                <h6 class="text-content">Nuts & Snacks</h6>
+                            </div>
+                            <a href="shop-left-sidebar.html" class="banner-button text-white">Shop Now <i
+                                    class="fa-solid fa-right-long ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section End -->
+
+    <!-- Product Section Start -->
+    <section class="product-section">
+        <div class="container-fluid-lg">
+            <div class="row g-sm-4 g-3">
+                <div class="col-xxl-3 col-xl-4 d-none d-xl-block">
+                    <div class="p-sticky">
+                        <div class="category-menu">
+                            <h3>Category</h3>
+                            <ul>
+                                @foreach ($categories as $category)
+                                <li>
+                                    <div class="category-list">
+                                        <img src="{{ asset('uploads/category_thumbnail') }}/{{$category->category_thumbnail}}"
+                                            class="blur-up lazyload" alt="">
+                                        <h5>
+                                            <a href="shop-left-sidebar.html">{{$category-> name}}</a>
+                                        </h5>
+                                    </div>
+                                </li>
+                                @endforeach
+
+
+                            </ul>
+
+                            <ul class="value-list">
+                                <li>
+                                    <div class="category-list">
+                                        <h5 class="ms-0 text-title">
+                                            <a href="shop-left-sidebar.html">Value of the Day</a>
+                                        </h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="category-list">
+                                        <h5 class="ms-0 text-title">
+                                            <a href="shop-left-sidebar.html">Top 50 Offers</a>
+                                        </h5>
+                                    </div>
+                                </li>
+                                <li class="mb-0">
+                                    <div class="category-list">
+                                        <h5 class="ms-0 text-title">
+                                            <a href="shop-left-sidebar.html">New Arrivals</a>
+                                        </h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="ratio_156 section-t-space">
+                            <div class="home-contain hover-effect">
+                                <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/8.jpg"
+                                    class="bg-img blur-up lazyload" alt="">
+                                <div class="home-detail p-top-left home-p-medium">
+                                    <div>
+                                        <h6 class="text-yellow home-banner">Seafood</h6>
+                                        <h3 class="text-uppercase fw-normal"><span
+                                                class="theme-color fw-bold">Freshes</span> Products</h3>
+                                        <h3 class="fw-light">every hour</h3>
+                                        <button onclick="location.href = 'shop-left-sidebar.html';"
+                                            class="btn btn-animation btn-md mend-auto">Shop Now <i
+                                                class="fa-solid fa-arrow-right icon"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ratio_medium section-t-space">
+                            <div class="home-contain hover-effect">
+                                <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/11.jpg"
+                                    class="img-fluid blur-up lazyload" alt="">
+                                <div class="home-detail p-top-left home-p-medium">
+                                    <div>
+                                        <h4 class="text-yellow text-exo home-banner">Organic</h4>
+                                        <h2 class="text-uppercase fw-normal mb-0 text-russo theme-color">fresh</h2>
+                                        <h2 class="text-uppercase fw-normal text-title">Vegetables</h2>
+                                        <p class="mb-3">Super Offer to 50% Off</p>
+                                        <button onclick="location.href = 'shop-left-sidebar.html';"
+                                            class="btn btn-animation btn-md mend-auto">Shop Now <i
+                                                class="fa-solid fa-arrow-right icon"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-t-space">
+                            <div class="category-menu">
+                                <h3>Trending Products</h3>
+
+                                <ul class="product-list border-0 p-0 d-block">
+                                    <li>
+                                        <div class="offer-product">
+                                            <a href="product-left-thumbnail.html" class="offer-image">
+                                                <img src="{{ asset('frontend_asset') }}/images/vegetable/product/23.png"
+                                                    class="blur-up lazyload" alt="">
+                                            </a>
+
+                                            <div class="offer-detail">
+                                                <div>
+                                                    <a href="product-left-thumbnail.html" class="text-title">
+                                                        <h6 class="name">Meatigo Premium Goat Curry</h6>
+                                                    </a>
+                                                    <span>450 G</span>
+                                                    <h6 class="price theme-color">$ 70.00</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="offer-product">
+                                            <a href="product-left-thumbnail.html" class="offer-image">
+                                                <img src="{{ asset('frontend_asset') }}/images/vegetable/product/24.png"
+                                                    class="blur-up lazyload" alt="">
+                                            </a>
+
+                                            <div class="offer-detail">
+                                                <div>
+                                                    <a href="product-left-thumbnail.html" class="text-title">
+                                                        <h6 class="name">Dates Medjoul Premium Imported</h6>
+                                                    </a>
+                                                    <span>450 G</span>
+                                                    <h6 class="price theme-color">$ 40.00</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="offer-product">
+                                            <a href="product-left-thumbnail.html" class="offer-image">
+                                                <img src="{{ asset('frontend_asset') }}/images/vegetable/product/25.png"
+                                                    class="blur-up lazyload" alt="">
+                                            </a>
+
+                                            <div class="offer-detail">
+                                                <div>
+                                                    <a href="product-left-thumbnail.html" class="text-title">
+                                                        <h6 class="name">Good Life Walnut Kernels</h6>
+                                                    </a>
+                                                    <span>200 G</span>
+                                                    <h6 class="price theme-color">$ 52.00</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="mb-0">
+                                        <div class="offer-product">
+                                            <a href="product-left-thumbnail.html" class="offer-image">
+                                                <img src="{{ asset('frontend_asset') }}/images/vegetable/product/26.png"
+                                                    class="blur-up lazyload" alt="">
+                                            </a>
+
+                                            <div class="offer-detail">
+                                                <div>
+                                                    <a href="product-left-thumbnail.html" class="text-title">
+                                                        <h6 class="name">Apple Red Premium Imported</h6>
+                                                    </a>
+                                                    <span>1 KG</span>
+                                                    <h6 class="price theme-color">$ 80.00</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="section-t-space">
+                            <div class="category-menu">
+                                <h3>Customer Comment</h3>
+
+                                <div class="review-box">
+                                    <div class="review-contain">
+                                        <h5 class="w-75">We Care About Our Customer Experience</h5>
+                                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly
+                                            used to demonstrate the visual form of a document or a typeface without
+                                            relying on meaningful content.</p>
+                                    </div>
+
+                                    <div class="review-profile">
+                                        <div class="review-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/review/1.jpg"
+                                                class="img-fluid blur-up lazyload" alt="">
+                                        </div>
+                                        <div class="review-detail">
+                                            <h5>Tina Mcdonnale</h5>
+                                            <h6>Sale Manager</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-9 col-xl-8">
+                    <div class="title title-flex">
+                        <div>
+                            <h2>Top Save Today</h2>
+                            <span class="title-leaf">
+                                <svg class="icon-width">
+                                    <use xlink:href="{{ asset('frontend_asset') }}/svg/leaf.svg#leaf"></use>
+                                </svg>
+                            </span>
+                            <p>Don't miss this opportunity at a special discount just for this week.</p>
+                        </div>
+                        <div class="timing-box">
+                            <div class="timing">
+                                <i data-feather="clock"></i>
+                                <h6 class="name">Expires in :</h6>
+                                <div class="time" id="clockdiv-1" data-hours="1" data-minutes="2"
+                                    data-seconds="3">
+                                    <ul>
+                                        <li>
+                                            <div class="counter">
+                                                <div class="days">
+                                                    <h6></h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="counter">
+                                                <div class="hours">
+                                                    <h6></h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="counter">
+                                                <div class="minutes">
+                                                    <h6></h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="counter">
+                                                <div class="seconds">
+                                                    <h6></h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-b-space">
+                        <div class="product-border border-row overflow-hidden">
+                            <div class="product-box-slider no-arrow">
+                                <div>
+                                    <div class="row m-0">
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/1.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Fantasy Crunchy Choco Chip Cookies</h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart">Add
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/2.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Cold Brew Coffee Instant Coffee 50 g</h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="row m-0">
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/3.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Peanut Butter Bite Premium Butter Cookies
+                                                            600 g
+                                                        </h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="label-tag">
+                                                    <span>NEW</span>
+                                                </div>
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/4.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">SnackAmor Combo Pack of Jowar Stick and
+                                                            Jowar
+                                                            Chips</h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="row m-0">
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/5.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Yumitos Chilli Sprinkled Potato Chips 100 g
+                                                        </h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/6.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Neu Farm Unpolished Desi Toor Dal 1 kg</h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="row m-0">
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="label-tag">
+                                                    <span>NEW</span>
+                                                </div>
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/7.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">healthy Long Life Toned Milk 1 L</h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/8.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Dog Treats Natural Yak Milk Bars For Small
+                                                            Dogs
+                                                            100g</h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="row m-0">
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/9.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Raw Mutton Leg, Packaging 5 Kg</h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/10.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Blended Instant Coffee 50 g Buy 1 Get 1
+                                                            Free
+                                                        </h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="row m-0">
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/3.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Peanut Butter Bite Premium Butter Cookies
+                                                            600 g
+                                                        </h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 px-0">
+                                            <div class="product-box">
+                                                <div class="product-image">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/5.png"
+                                                            class="img-fluid blur-up lazyload" alt="">
+                                                    </a>
+                                                    <ul class="product-option">
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="View">
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                                data-bs-target="#view">
+                                                                <i data-feather="eye"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Compare">
+                                                            <a href="compare.html">
+                                                                <i data-feather="refresh-cw"></i>
+                                                            </a>
+                                                        </li>
+
+                                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Wishlist">
+                                                            <a href="wishlist.html" class="notifi-wishlist">
+                                                                <i data-feather="heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a href="product-left-thumbnail.html">
+                                                        <h6 class="name">Yumitos Chilli Sprinkled Potato Chips 100 g
+                                                        </h6>
+                                                    </a>
+
+                                                    <h5 class="sold text-content">
+                                                        <span class="theme-color price">$26.69</span>
+                                                        <del>28.56</del>
+                                                    </h5>
+
+                                                    <div class="product-rating mt-sm-2 mt-1">
+                                                        <ul class="rating">
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star" class="fill"></i>
+                                                            </li>
+                                                            <li>
+                                                                <i data-feather="star"></i>
+                                                            </li>
+                                                        </ul>
+
+                                                        <h6 class="theme-color">In Stock</h6>
+                                                    </div>
+
+                                                    <div class="add-to-cart-box">
+                                                        <button class="btn btn-add-cart addcart-button">Add
+                                                            <span class="add-icon">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="cart_qty qty-box">
+                                                            <div class="input-group">
+                                                                <button type="button" class="qty-left-minus"
+                                                                    data-type="minus" data-field="">
+                                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                                </button>
+                                                                <input class="form-control input-number qty-input"
+                                                                    type="text" name="quantity" value="0">
+                                                                <button type="button" class="qty-right-plus"
+                                                                    data-type="plus" data-field="">
+                                                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="title">
+                        <h2>Bowse by Categories</h2>
+                        <span class="title-leaf">
+                            <svg class="icon-width">
+                                <use xlink:href="">
+                                </use>
+                            </svg>
+                        </span>
+                        <p>Top Categories Of The Week</p>
+                    </div>
+
+
+                    <div class="category-slider-2 product-wrapper no-arrow">
+                        @foreach ($categories as $category)
+                            <div>
+                                <a href="shop-left-sidebar.html" class="category-box category-dark">
+                                    <div>
+                                        <img src="{{ asset('uploads/category_thumbnail') }}/{{ $category->category_thumbnail }}"
+                                            class="lazyload w-100" alt="{{ $category->name }}"
+                                            style="max-width: 100%;">
+                                        <h5>{{ $category->name }}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+
+
+
+                    <div class="section-t-space section-b-space">
+                        <div class="row g-md-4 g-3">
+                            <div class="col-md-6">
+                                <div class="banner-contain hover-effect">
+                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/9.jpg"
+                                        class="bg-img blur-up lazyload" alt="">
+                                    <div class="banner-details p-center-left p-4">
+                                        <div>
+                                            <h3 class="text-exo">50% offer</h3>
+                                            <h4 class="text-russo fw-normal theme-color mb-2">Testy Mushrooms</h4>
+                                            <button onclick="location.href = 'shop-left-sidebar.html';"
+                                                class="btn btn-animation btn-sm mend-auto">Shop Now <i
+                                                    class="fa-solid fa-arrow-right icon"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="banner-contain hover-effect">
+                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/10.jpg"
+                                        class="bg-img blur-up lazyload" alt="">
+                                    <div class="banner-details p-center-left p-4">
+                                        <div>
+                                            <h3 class="text-exo">50% offer</h3>
+                                            <h4 class="text-russo fw-normal theme-color mb-2">Fresh MEAT</h4>
+                                            <button onclick="location.href = 'shop-left-sidebar.html';"
+                                                class="btn btn-animation btn-sm mend-auto">Shop Now <i
+                                                    class="fa-solid fa-arrow-right icon"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="title d-block">
+                        <h2>Food Cupboard</h2>
+                        <span class="title-leaf">
+                            <svg class="icon-width">
+                                <use xlink:href="{{ asset('frontend_asset') }}/svg/leaf.svg#leaf"></use>
+                            </svg>
+                        </span>
+                        <p>A virtual assistant collects the products from your list</p>
+                    </div>
+
+                    <div class="product-border overflow-hidden wow fadeInUp">
+                        <div class="product-box-slider no-arrow">
+                            <div>
+                                <div class="row m-0">
+                                    <div class="col-12 px-0">
+                                        <div class="product-box">
+                                            <div class="product-image">
+                                                <a href="product-left-thumbnail.html">
+                                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/product/1.png"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </a>
+                                                <ul class="product-option">
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="View">
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                            data-bs-target="#view">
+                                                            <i data-feather="eye"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Compare">
+                                                        <a href="compare.html">
+                                                            <i data-feather="refresh-cw"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Wishlist">
+                                                        <a href="wishlist.html" class="notifi-wishlist">
+                                                            <i data-feather="heart"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="product-detail">
+                                                <a href="product-left-thumbnail.html">
+                                                    <h6 class="name h-100">Chocalate Powder</h6>
+                                                </a>
+
+                                                <h5 class="sold text-content">
+                                                    <span class="theme-color price">$26.69</span>
+                                                    <del>28.56</del>
+                                                </h5>
+
+                                                <div class="product-rating mt-sm-2 mt-1">
+                                                    <ul class="rating">
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star"></i>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h6 class="theme-color">In Stock</h6>
+                                                </div>
+
+                                                <div class="add-to-cart-box">
+                                                    <button class="btn btn-add-cart addcart-button">Add
+                                                        <span class="add-icon">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                    <div class="cart_qty qty-box">
+                                                        <div class="input-group">
+                                                            <button type="button" class="qty-left-minus"
+                                                                data-type="minus" data-field="">
+                                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                                            </button>
+                                                            <input class="form-control input-number qty-input"
+                                                                type="text" name="quantity" value="0">
+                                                            <button type="button" class="qty-right-plus"
+                                                                data-type="plus" data-field="">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row m-0">
+                                    <div class="col-12 px-0">
+                                        <div class="product-box">
+                                            <div class="product-image">
+                                                <a href="product-left-thumbnail.html">
+                                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/product/2.png"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </a>
+                                                <ul class="product-option">
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="View">
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                            data-bs-target="#view">
+                                                            <i data-feather="eye"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Compare">
+                                                        <a href="compare.html">
+                                                            <i data-feather="refresh-cw"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Wishlist">
+                                                        <a href="wishlist.html" class="notifi-wishlist">
+                                                            <i data-feather="heart"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="product-detail">
+                                                <a href="product-left-thumbnail.html">
+                                                    <h6 class="name h-100">Sandwich Cookies</h6>
+                                                </a>
+
+                                                <h5 class="sold text-content">
+                                                    <span class="theme-color price">$26.69</span>
+                                                    <del>28.56</del>
+                                                </h5>
+
+                                                <div class="product-rating mt-sm-2 mt-1">
+                                                    <ul class="rating">
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star"></i>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h6 class="theme-color">In Stock</h6>
+                                                </div>
+
+                                                <div class="add-to-cart-box">
+                                                    <button class="btn btn-add-cart addcart-button">Add
+                                                        <span class="add-icon">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                    <div class="cart_qty qty-box">
+                                                        <div class="input-group">
+                                                            <button type="button" class="qty-left-minus"
+                                                                data-type="minus" data-field="">
+                                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                                            </button>
+                                                            <input class="form-control input-number qty-input"
+                                                                type="text" name="quantity" value="0">
+                                                            <button type="button" class="qty-right-plus"
+                                                                data-type="plus" data-field="">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row m-0">
+                                    <div class="col-12 px-0">
+                                        <div class="product-box">
+                                            <div class="product-image">
+                                                <a href="product-left-thumbnail.html">
+                                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/product/3.png"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </a>
+                                                <ul class="product-option">
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="View">
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                            data-bs-target="#view">
+                                                            <i data-feather="eye"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Compare">
+                                                        <a href="compare.html">
+                                                            <i data-feather="refresh-cw"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Wishlist">
+                                                        <a href="wishlist.html" class="notifi-wishlist">
+                                                            <i data-feather="heart"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="product-detail">
+                                                <a href="product-left-thumbnail.html">
+                                                    <h6 class="name h-100">Butter Croissant</h6>
+                                                </a>
+
+                                                <h5 class="sold text-content">
+                                                    <span class="theme-color price">$26.69</span>
+                                                    <del>28.56</del>
+                                                </h5>
+
+                                                <div class="product-rating mt-sm-2 mt-1">
+                                                    <ul class="rating">
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star"></i>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h6 class="theme-color">In Stock</h6>
+                                                </div>
+
+                                                <div class="add-to-cart-box">
+                                                    <button class="btn btn-add-cart addcart-button">Add
+                                                        <span class="add-icon">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                    <div class="cart_qty qty-box">
+                                                        <div class="input-group">
+                                                            <button type="button" class="qty-left-minus"
+                                                                data-type="minus" data-field="">
+                                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                                            </button>
+                                                            <input class="form-control input-number qty-input"
+                                                                type="text" name="quantity" value="0">
+                                                            <button type="button" class="qty-right-plus"
+                                                                data-type="plus" data-field="">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row m-0">
+                                    <div class="col-12 px-0">
+                                        <div class="product-box">
+                                            <div class="product-image">
+                                                <a href="product-left-thumbnail.html">
+                                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/product/4.png"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </a>
+                                                <ul class="product-option">
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="View">
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                            data-bs-target="#view">
+                                                            <i data-feather="eye"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Compare">
+                                                        <a href="compare.html">
+                                                            <i data-feather="refresh-cw"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Wishlist">
+                                                        <a href="wishlist.html" class="notifi-wishlist">
+                                                            <i data-feather="heart"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="product-detail">
+                                                <a href="product-left-thumbnail.html">
+                                                    <h6 class="name h-100">Dark Chocalate</h6>
+                                                </a>
+
+                                                <h5 class="sold text-content">
+                                                    <span class="theme-color price">$26.69</span>
+                                                    <del>28.56</del>
+                                                </h5>
+
+                                                <div class="product-rating mt-sm-2 mt-1">
+                                                    <ul class="rating">
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star"></i>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h6 class="theme-color">In Stock</h6>
+                                                </div>
+
+                                                <div class="add-to-cart-box">
+                                                    <button class="btn btn-add-cart addcart-button">Add
+                                                        <span class="add-icon">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                    <div class="cart_qty qty-box">
+                                                        <div class="input-group">
+                                                            <button type="button" class="qty-left-minus"
+                                                                data-type="minus" data-field="">
+                                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                                            </button>
+                                                            <input class="form-control input-number qty-input"
+                                                                type="text" name="quantity" value="0">
+                                                            <button type="button" class="qty-right-plus"
+                                                                data-type="plus" data-field="">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row m-0">
+                                    <div class="col-12 px-0">
+                                        <div class="product-box">
+                                            <div class="product-image">
+                                                <a href="product-left-thumbnail.html">
+                                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/product/5.png"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </a>
+                                                <ul class="product-option">
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="View">
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                            data-bs-target="#view">
+                                                            <i data-feather="eye"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Compare">
+                                                        <a href="compare.html">
+                                                            <i data-feather="refresh-cw"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Wishlist">
+                                                        <a href="wishlist.html" class="notifi-wishlist">
+                                                            <i data-feather="heart"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="product-detail">
+                                                <a href="product-left-thumbnail.html">
+                                                    <h6 class="name h-100">Mix-sweet-food</h6>
+                                                </a>
+
+                                                <h5 class="sold text-content">
+                                                    <span class="theme-color price">$26.69</span>
+                                                    <del>28.56</del>
+                                                </h5>
+
+                                                <div class="product-rating mt-sm-2 mt-1">
+                                                    <ul class="rating">
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star"></i>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h6 class="theme-color">In Stock</h6>
+                                                </div>
+
+                                                <div class="add-to-cart-box">
+                                                    <button class="btn btn-add-cart addcart-button">Add
+                                                        <span class="add-icon">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                    <div class="cart_qty qty-box">
+                                                        <div class="input-group">
+                                                            <button type="button" class="qty-left-minus"
+                                                                data-type="minus" data-field="">
+                                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                                            </button>
+                                                            <input class="form-control input-number qty-input"
+                                                                type="text" name="quantity" value="0">
+                                                            <button type="button" class="qty-right-plus"
+                                                                data-type="plus" data-field="">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row m-0">
+                                    <div class="col-12 px-0">
+                                        <div class="product-box">
+                                            <div class="product-image">
+                                                <a href="product-left-thumbnail.html">
+                                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/product/4.png"
+                                                        class="img-fluid blur-up lazyload" alt="">
+                                                </a>
+                                                <ul class="product-option">
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="View">
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                            data-bs-target="#view">
+                                                            <i data-feather="eye"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Compare">
+                                                        <a href="compare.html">
+                                                            <i data-feather="refresh-cw"></i>
+                                                        </a>
+                                                    </li>
+
+                                                    <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Wishlist">
+                                                        <a href="wishlist.html" class="notifi-wishlist">
+                                                            <i data-feather="heart"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="product-detail">
+                                                <a href="product-left-thumbnail.html">
+                                                    <h6 class="name h-100">Dark Chocalate</h6>
+                                                </a>
+
+                                                <h5 class="sold text-content">
+                                                    <span class="theme-color price">$26.69</span>
+                                                    <del>28.56</del>
+                                                </h5>
+
+                                                <div class="product-rating mt-sm-2 mt-1">
+                                                    <ul class="rating">
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star" class="fill"></i>
+                                                        </li>
+                                                        <li>
+                                                            <i data-feather="star"></i>
+                                                        </li>
+                                                    </ul>
+
+                                                    <h6 class="theme-color">In Stock</h6>
+                                                </div>
+
+                                                <div class="add-to-cart-box">
+                                                    <button class="btn btn-add-cart addcart-button">Add
+                                                        <span class="add-icon">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                    <div class="cart_qty qty-box">
+                                                        <div class="input-group">
+                                                            <button type="button" class="qty-left-minus"
+                                                                data-type="minus" data-field="">
+                                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                                            </button>
+                                                            <input class="form-control input-number qty-input"
+                                                                type="text" name="quantity" value="0">
+                                                            <button type="button" class="qty-right-plus"
+                                                                data-type="plus" data-field="">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-t-space">
+                        <div class="banner-contain">
+                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/15.jpg"
+                                class="bg-img blur-up lazyload" alt="">
+                            <div class="banner-details p-center p-4 text-white text-center">
+                                <div>
+                                    <h3 class="lh-base fw-bold offer-text">Get $3 Cashback! Min Order of $30</h3>
+                                    <h6 class="coupon-code">Use Code : GROCERY1920</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-t-space section-b-space">
+                        <div class="row g-md-4 g-3">
+                            <div class="col-xxl-8 col-xl-12 col-md-7">
+                                <div class="banner-contain hover-effect">
+                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/12.jpg"
+                                        class="bg-img blur-up lazyload" alt="">
+                                    <div class="banner-details p-center-left p-4">
+                                        <div>
+                                            <h2 class="text-kaushan fw-normal theme-color">Get Ready To</h2>
+                                            <h3 class="mt-2 mb-3">TAKE ON THE DAY!</h3>
+                                            <p class="text-content banner-text">In publishing and graphic design,
+                                                Lorem
+                                                ipsum is a placeholder text commonly used to demonstrate.</p>
+                                            <button onclick="location.href = 'shop-left-sidebar.html';"
+                                                class="btn btn-animation btn-sm mend-auto">Shop Now <i
+                                                    class="fa-solid fa-arrow-right icon"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-4 col-xl-12 col-md-5">
+                                <a href="shop-left-sidebar.html" class="banner-contain hover-effect h-100">
+                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/13.jpg"
+                                        class="bg-img blur-up lazyload" alt="">
+                                    <div class="banner-details p-center-left p-4 h-100">
+                                        <div>
+                                            <h2 class="text-kaushan fw-normal text-danger">20% Off</h2>
+                                            <h3 class="mt-2 mb-2 theme-color">SUMMRY</h3>
+                                            <h3 class="fw-normal product-name text-title">Product</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="title d-block">
+                        <div>
+                            <h2>Our best Seller</h2>
+                            <span class="title-leaf">
+                                <svg class="icon-width">
+                                    <use xlink:href="{{ asset('frontend_asset') }}/svg/leaf.svg#leaf"></use>
+                                </svg>
+                            </span>
+                            <p>A virtual assistant collects the products from your list</p>
+                        </div>
+                    </div>
+
+                    <div class="best-selling-slider product-wrapper wow fadeInUp">
+                        <div>
+                            <ul class="product-list">
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/11.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Tuffets Whole Wheat Bread</h6>
+                                                </a>
+                                                <span>500 G</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/12.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Potato</h6>
+                                                </a>
+                                                <span>500 G</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/13.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Green Chilli</h6>
+                                                </a>
+                                                <span>200 G</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/14.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Muffets Burger Bun</h6>
+                                                </a>
+                                                <span>150 G</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul class="product-list">
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/15.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Tuffets Britannia Cheezza</h6>
+                                                </a>
+                                                <span>500 G</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/16.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Long Life Toned Milk</h6>
+                                                </a>
+                                                <span>1 L</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/17.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Organic Tomato</h6>
+                                                </a>
+                                                <span>1 KG</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/18.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Organic Jam</h6>
+                                                </a>
+                                                <span>150 G</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul class="product-list">
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/19.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Good Life Refined Sunflower Oil</h6>
+                                                </a>
+                                                <span>1 L</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/20.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Good Life Raw Peanuts</h6>
+                                                </a>
+                                                <span>500 G</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/21.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">TufBest Farms Moong Dal</h6>
+                                                </a>
+                                                <span>1 KG</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="offer-product">
+                                        <a href="product-left-thumbnail.html" class="offer-image">
+                                            <img src="{{ asset('frontend_asset') }}/images/vegetable/product/22.png"
+                                                class="blur-up lazyload" alt="">
+                                        </a>
+
+                                        <div class="offer-detail">
+                                            <div>
+                                                <a href="product-left-thumbnail.html" class="text-title">
+                                                    <h6 class="name">Frooti Mango Drink</h6>
+                                                </a>
+                                                <span>160 ML</span>
+                                                <h6 class="price theme-color">$ 10.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section-t-space">
+                        <div class="banner-contain hover-effect">
+                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/14.jpg"
+                                class="bg-img blur-up lazyload" alt="">
+                            <div class="banner-details p-center banner-b-space w-100 text-center">
+                                <div>
+                                    <h6 class="ls-expanded theme-color mb-sm-3 mb-1">SUMMER</h6>
+                                    <h2 class="banner-title">VEGETABLE</h2>
+                                    <h5 class="lh-sm mx-auto mt-1 text-content">Save up to 5% OFF</h5>
+                                    <button onclick="location.href = 'shop-left-sidebar.html';"
+                                        class="btn btn-animation btn-sm mx-auto mt-sm-3 mt-2">Shop Now <i
+                                            class="fa-solid fa-arrow-right icon"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="title section-t-space">
+                        <h2>Featured Blog</h2>
+                        <span class="title-leaf">
+                            <svg class="icon-width">
+                                <use xlink:href="{{ asset('frontend_asset') }}/svg/leaf.svg#leaf"></use>
+                            </svg>
+                        </span>
+                        <p>A virtual assistant collects the products from your list</p>
+                    </div>
+
+                    <div class="slider-3-blog ratio_65 no-arrow product-wrapper">
+                        <div>
+                            <div class="blog-box">
+                                <div class="blog-box-image">
+                                    <a href="blog-detail.html" class="blog-image">
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/blog/1.jpg"
+                                            class="bg-img blur-up lazyload" alt="">
+                                    </a>
+                                </div>
+
+                                <a href="blog-detail.html" class="blog-detail">
+                                    <h6>20 March, 2022</h6>
+                                    <h5>Fresh Vegetable Online</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="blog-box">
+                                <div class="blog-box-image">
+                                    <a href="blog-detail.html" class="blog-image">
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/blog/2.jpg"
+                                            class="bg-img blur-up lazyload" alt="">
+                                    </a>
+                                </div>
+
+                                <a href="blog-detail.html" class="blog-detail">
+                                    <h6>10 April, 2022</h6>
+                                    <h5>Fresh Combo Fruit</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="blog-box">
+                                <div class="blog-box-image">
+                                    <a href="blog-detail.html" class="blog-image">
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/blog/3.jpg"
+                                            class="bg-img blur-up lazyload" alt="">
+                                    </a>
+                                </div>
+
+                                <a href="blog-detail.html" class="blog-detail">
+                                    <h6>10 April, 2022</h6>
+                                    <h5>Nuts to Eat for Better Health</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="blog-box">
+                                <div class="blog-box-image">
+                                    <a href="blog-detail.html" class="blog-image">
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/blog/1.jpg"
+                                            class="bg-img blur-up lazyload" alt="">
+                                    </a>
+                                </div>
+
+                                <a href="blog-detail.html" class="blog-detail">
+                                    <h6>20 March, 2022</h6>
+                                    <h5>Fresh Vegetable Online</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Newsletter Section Start -->
+    <section class="newsletter-section section-b-space">
+        <div class="container-fluid-lg">
+            <div class="newsletter-box newsletter-box-2">
+                <div class="newsletter-contain py-5">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xxl-4 col-lg-5 col-md-7 col-sm-9 offset-xxl-2 offset-md-1">
+                                <div class="newsletter-detail">
+                                    <h2>Join our newsletter and get...</h2>
+                                    <h5>$20 discount for your first order</h5>
+                                    <div class="input-box">
+                                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="Enter Your Email">
+                                        <i class="fa-solid fa-envelope arrow"></i>
+                                        <button class="sub-btn  btn-animation">
+                                            <span class="d-sm-block d-none">Subscribe</span>
+                                            <i class="fa-solid fa-arrow-right icon"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="section-t-space">
+        <div class="container-fluid-lg">
+            <div class="service-section">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="service-contain">
+                            <div class="service-box">
+                                <div class="service-image">
+                                    <img src="{{ asset('frontend_asset') }}/svg/product.svg"
+                                        class="blur-up lazyload" alt="">
+                                </div>
+
+                                <div class="service-detail">
+                                    <h5>Every Fresh Products</h5>
+                                </div>
+                            </div>
+
+                            <div class="service-box">
+                                <div class="service-image">
+                                    <img src="{{ asset('frontend_asset') }}/svg/delivery.svg"
+                                        class="blur-up lazyload" alt="">
+                                </div>
+
+                                <div class="service-detail">
+                                    <h5>Free Delivery For Order Over $50</h5>
+                                </div>
+                            </div>
+
+                            <div class="service-box">
+                                <div class="service-image">
+                                    <img src="{{ asset('frontend_asset') }}/svg/discount.svg"
+                                        class="blur-up lazyload" alt="">
+                                </div>
+
+                                <div class="service-detail">
+                                    <h5>Daily Mega Discounts</h5>
+                                </div>
+                            </div>
+
+                            <div class="service-box">
+                                <div class="service-image">
+                                    <img src="{{ asset('frontend_asset') }}/svg/market.svg"
+                                        class="blur-up lazyload" alt="">
+                                </div>
+
+                                <div class="service-detail">
+                                    <h5>Best Price On The Market</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-footer section-b-space section-t-space">
+                <div class="row g-md-4 g-3">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="footer-logo">
+                            <div class="theme-logo">
+                                <a href="index.html">
+                                    <img src="{{ asset('frontend_asset') }}/images/logo/1.png"
+                                        class="blur-up lazyload" alt="">
+                                </a>
+                            </div>
+
+                            <div class="footer-logo-contain">
+                                <p>We are a friendly bar serving a variety of cocktails, wines and beers. Our bar is a
+                                    perfect place for a couple.</p>
+
+                                <ul class="address">
+                                    <li>
+                                        <i data-feather="home"></i>
+                                        <a href="javascript:void(0)">1418 Riverwood Drive, CA 96052, US</a>
+                                    </li>
+                                    <li>
+                                        <i data-feather="mail"></i>
+                                        <a href="javascript:void(0)">support@fastkart.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="footer-title">
+                            <h4>Categories</h4>
+                        </div>
+
+                        <div class="footer-contain">
+                            <ul>
+                                <li>
+                                    <a href="shop-left-sidebar.html" class="text-content">Vegetables & Fruit</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl col-lg-2 col-sm-3">
+                        <div class="footer-title">
+                            <h4>Useful Links</h4>
+                        </div>
+
+                        <div class="footer-contain">
+                            <ul>
+                                <li>
+                                    <a href="index.html" class="text-content">Home</a>
+                                </li>
+                                <li>
+                                    <a href="shop-top-filter.html" class="text-content">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html" class="text-content">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="contact-us.html" class="text-content">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-sm-3">
+                        <div class="footer-title">
+                            <h4>Help Center</h4>
+                        </div>
+
+                        <div class="footer-contain">
+                            <ul>
+                                <li>
+                                    <a href="order-success.html" class="text-content">Your Order</a>
+                                </li>
+                                <li>
+                                    <a href="user-dashboard.html" class="text-content">Your Account</a>
+                                </li>
+                                <li>
+                                    <a href="order-tracking.html" class="text-content">Track Order</a>
+                                </li>
+                                <li>
+                                    <a href="wishlist.html" class="text-content">Your Wishlist</a>
+                                </li>
+                                <li>
+                                    <a href="search.html" class="text-content">Search</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html" class="text-content">FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="footer-title">
+                            <h4>Contact Us</h4>
+                        </div>
+
+                        <div class="footer-contact">
+                            <ul>
+                                <li>
+                                    <div class="footer-number">
+                                        <i data-feather="phone"></i>
+                                        <div class="contact-number">
+                                            <h6 class="text-content">Hotline 24/7 :</h6>
+                                            <h5>+91 888 104 2340</h5>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="footer-number">
+                                        <i data-feather="mail"></i>
+                                        <div class="contact-number">
+                                            <h6 class="text-content">Email Address :</h6>
+                                            <h5>fastkart@hotmail.com</h5>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="social-app mb-0">
+                                    <h5 class="mb-2 text-content">Download App :</h5>
+                                    <ul>
+                                        <li class="mb-0">
+                                            <a href="https://play.google.com/store/apps" target="_blank">
+                                                <img src="{{ asset('frontend_asset') }}/images/playstore.svg"
+                                                    class="blur-up lazyload" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="mb-0">
+                                            <a href="https://www.apple.com/in/app-store/" target="_blank">
+                                                <img src="{{ asset('frontend_asset') }}/images/appstore.svg"
+                                                    class="blur-up lazyload" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-footer section-small-space">
+                <div class="reserve">
+                    <h6 class="text-content">©2022 Fastkart All rights reserved</h6>
+                </div>
+
+                <div class="payment">
+                    <img src="{{ asset('frontend_asset') }}/images/payment/1.png" class="blur-up lazyload"
+                        alt="">
+                </div>
+
+                <div class="social-link">
+                    <h6 class="text-content">Stay connected :</h6>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://in.pinterest.com/" target="_blank">
+                                <i class="fa-brands fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Quick View Modal Box Start -->
+    <div class="modal fade theme-modal view-modal" id="view" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header p-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-sm-4 g-2">
+                        <div class="col-lg-6">
+                            <div class="slider-image">
+                                <img src="{{ asset('frontend_asset') }}/images/product/category/1.jpg"
+                                    class="img-fluid blur-up lazyload" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="right-sidebar-modal">
+                                <h4 class="title-name">Peanut Butter Bite Premium Butter Cookies 600 g</h4>
+                                <h4 class="price">$36.99</h4>
+                                <div class="product-rating">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="ms-2">8 Reviews</span>
+                                    <span class="ms-2 text-danger">6 sold in last 16 hours</span>
+                                </div>
+
+                                <div class="product-detail">
+                                    <h4>Product Details :</h4>
+                                    <p>Candy canes sugar plum tart cotton candy chupa chups sugar plum chocolate I love.
+                                        Caramels marshmallow icing dessert candy canes I love soufflé I love toffee.
+                                        Marshmallow pie sweet sweet roll sesame snaps tiramisu jelly bear claw. Bonbon
+                                        muffin I love carrot cake sugar plum dessert bonbon.</p>
+                                </div>
+
+                                <ul class="brand-list">
+                                    <li>
+                                        <div class="brand-box">
+                                            <h5>Brand Name:</h5>
+                                            <h6>Black Forest</h6>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="brand-box">
+                                            <h5>Product Code:</h5>
+                                            <h6>W0690034</h6>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="brand-box">
+                                            <h5>Product Type:</h5>
+                                            <h6>White Cream Cake</h6>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="select-size">
+                                    <h4>Cake Size :</h4>
+                                    <select class="form-select select-form-size">
+                                        <option selected>Select Size</option>
+                                        <option value="1.2">1/2 KG</option>
+                                        <option value="0">1 KG</option>
+                                        <option value="1.5">1/5 KG</option>
+                                        <option value="red">Red Roses</option>
+                                        <option value="pink">With Pink Roses</option>
+                                    </select>
+                                </div>
+
+                                <div class="modal-button">
+                                    <button onclick="location.href = 'cart.html';"
+                                        class="btn btn-md add-cart-button icon">Add
+                                        To Cart</button>
+                                    <button onclick="location.href = 'product-left.html';"
+                                        class="btn theme-bg-color view-button icon text-white fw-bold btn-md">
+                                        View More Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quick View Modal Box End -->
+
+
+    <!-- Cookie Bar Box Start -->
+    <div class="cookie-bar-box">
+        <div class="cookie-box">
+            <div class="cookie-image">
+                <img src="{{ asset('frontend_asset') }}/images/cookie-bar.png" class="blur-up lazyload"
+                    alt="">
+                <h2>Cookies!</h2>
+            </div>
+
+            <div class="cookie-contain">
+                <h5 class="text-content">We use cookies to make your experience better</h5>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn privacy-button">Privacy Policy</button>
+            <button class="btn ok-button">OK</button>
+        </div>
+    </div>
+    <!-- Cookie Bar Box End -->
+
+    <!-- Deal Box Modal Start -->
+    <div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
+                        <p class="mt-1 text-content">Recommended deals for you.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="deal-offer-box">
+                        <ul class="deal-offer-list">
+                            <li class="list-1">
+                                <div class="deal-offer-contain">
+                                    <a href="shop-left-sidebar.html" class="deal-image">
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/10.png"
+                                            class="blur-up lazyload" alt="">
+                                    </a>
+
+                                    <a href="shop-left-sidebar.html" class="deal-contain">
+                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="list-2">
+                                <div class="deal-offer-contain">
+                                    <a href="shop-left-sidebar.html" class="deal-image">
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/11.png"
+                                            class="blur-up lazyload" alt="">
+                                    </a>
+
+                                    <a href="shop-left-sidebar.html" class="deal-contain">
+                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="list-3">
+                                <div class="deal-offer-contain">
+                                    <a href="shop-left-sidebar.html" class="deal-image">
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/12.png"
+                                            class="blur-up lazyload" alt="">
+                                    </a>
+
+                                    <a href="shop-left-sidebar.html" class="deal-contain">
+                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="list-1">
+                                <div class="deal-offer-contain">
+                                    <a href="shop-left-sidebar.html" class="deal-image">
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/product/13.png"
+                                            class="blur-up lazyload" alt="">
+                                    </a>
+
+                                    <a href="shop-left-sidebar.html" class="deal-contain">
+                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Deal Box Modal End -->
+
+    <!-- Tap to top start -->
+    <div class="theme-option">
+        <div class="setting-box">
+            <button class="btn setting-button">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+
+            <div class="theme-setting-2">
+                <div class="theme-box">
+                    <ul>
+                        <li>
+                            <div class="setting-name">
+                                <h4>Color</h4>
+                            </div>
+                            <div class="theme-setting-button color-picker">
+                                <form class="form-control">
+                                    <label for="colorPick" class="form-label mb-0">Theme Color</label>
+                                    <input type="color" class="form-control form-control-color" id="colorPick"
+                                        value="#0da487" title="Choose your color">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="setting-name">
+                                <h4>Dark</h4>
+                            </div>
+                            <div class="theme-setting-button">
+                                <button class="btn btn-2 outline" id="darkButton">Dark</button>
+                                <button class="btn btn-2 unline" id="lightButton">Light</button>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="setting-name">
+                                <h4>RTL</h4>
+                            </div>
+                            <div class="theme-setting-button rtl">
+                                <button class="btn btn-2 rtl-unline">LTR</button>
+                                <button class="btn btn-2 rtl-outline">RTL</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-to-top">
+            <a id="back-to-top" href="#">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Tap to top end -->
+
+    <!-- Bg overlay Start -->
+    <div class="bg-overlay"></div>
+    <!-- Bg overlay End -->
+
+    <!-- latest jquery-->
+    <script src="{{ asset('frontend_asset') }}/js/jquery-3.6.0.min.js"></script>
+
+    <!-- jquery ui-->
+    <script src="{{ asset('frontend_asset') }}/js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="{{ asset('frontend_asset') }}/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('frontend_asset') }}/js/bootstrap/bootstrap-notify.min.js"></script>
+    <script src="{{ asset('frontend_asset') }}/js/bootstrap/popper.min.js"></script>
+
+    <!-- feather icon js-->
+    <script src="{{ asset('frontend_asset') }}/js/feather/feather.min.js"></script>
+    <script src="{{ asset('frontend_asset') }}/js/feather/feather-icon.js"></script>
+
+    <!-- Lazyload Js -->
+    <script src="{{ asset('frontend_asset') }}/js/lazysizes.min.js"></script>
+
+    <!-- Slick js-->
+    <script src="{{ asset('frontend_asset') }}/js/slick/slick.js"></script>
+    <script src="{{ asset('frontend_asset') }}/js/slick/slick-animation.min.js"></script>
+    <script src="{{ asset('frontend_asset') }}/js/slick/custom_slick.js"></script>
+
+    <!-- Auto Height Js -->
+    <script src="{{ asset('frontend_asset') }}/js/auto-height.js"></script>
+
+    <!-- Timer Js -->
+    <script src="{{ asset('frontend_asset') }}/js/timer1.js"></script>
+
+    <!-- Fly Cart Js -->
+    <script src="{{ asset('frontend_asset') }}/js/fly-cart.js"></script>
+
+    <!-- Quantity js -->
+    <script src="{{ asset('frontend_asset') }}/js/quantity-2.js"></script>
+
+    <!-- WOW js -->
+    <script src="{{ asset('frontend_asset') }}/js/wow.min.js"></script>
+    <script src="{{ asset('frontend_asset') }}/js/custom-wow.js"></script>
+
+    <!-- script js -->
+    <script src="{{ asset('frontend_asset') }}/js/script.js"></script>
+
+    <!-- thme setting js -->
+    <script src="{{ asset('frontend_asset') }}/js/theme-setting.js"></script>
+</body>
+
 </html>
