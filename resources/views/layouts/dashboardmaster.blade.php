@@ -28,11 +28,19 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/ratio.css') }}">
         <!-- remixicon css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/remixicon.css') }}">
+
+        <!-- Select2 css -->
+        <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+
+        {{-- <!--Dropzon css -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset') }}/css/vendors/dropzone.css"> --}}
         <!-- Feather icon css-->
         <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/vendors/feather-icon.css') }}">
         <!-- Plugins css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/vendors/scrollbar.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/vendors/animate.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset') }}/css/vendors/animate.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset') }}/css/vendors/chartist.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset') }}/css/vendors/date-picker.css">
         <!-- Bootstrap css-->
         <link rel="stylesheet" type="text/css" href="{{ asset('dashboard_asset/css/vendors/bootstrap.css') }}">
         <!-- vector map css -->
@@ -77,7 +85,8 @@
                     <div class="nav-right col-6 pull-right right-header p-0">
                         <ul class="nav-menus">
                             <div>
-                                <a href="{{ route('index') }}" target="_blank" class="btn btn-primary mx-3">Visit Site</a>
+                                <a href="{{ route('index') }}" target="_blank" class="btn btn-primary mx-3">Visit
+                                    Site</a>
                             </div>
 
                             <li class="onhover-dropdown">
@@ -166,7 +175,6 @@
                                             </a>
                                         </form>
                                     </li>
-
                                 </ul>
                             </li>
                         </ul>
@@ -225,11 +233,11 @@
                                         </a>
                                         <ul class="sidebar-submenu">
                                             <li>
-                                                <a href="">Prodcts Lists</a>
+                                                <a href="{{ route('product.index') }}">Prodcts Lists</a>
                                             </li>
 
                                             <li>
-                                                <a href="">New Products</a>
+                                                <a href="{{ route('product.create') }}">New Products</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -428,11 +436,26 @@
         <!-- ratio js -->
         <script src="{{ asset('dashboard_asset/js/ratio.js') }}"></script>
 
+        <!-- Sidebar js -->
+        <script src="{{ asset('dashboard_asset') }}/js/config.js"></script>
+
+        <!--Dropzon js -->
+        <script src="{{ asset('dashboard_asset') }}/js/dropzone/dropzone.js"></script>
+        <script src="{{ asset('dashboard_asset') }}/js/dropzone/dropzone-script.js"></script>
+
         <!-- sidebar effect -->
         <script src="{{ asset('dashboard_asset/js/sidebareffect.js') }}"></script>
 
         <!-- Theme js -->
         <script src="{{ asset('dashboard_asset/js/script.js') }}"></script>
+
+        <!-- select2 js -->
+        <script src="{{ asset('dashboard_asset') }}/js/select2.min.js"></script>
+        <script src="{{ asset('dashboard_asset') }}/js/select2-custom.js"></script>
+
+        <!-- ck editor js -->
+        <script src="{{ asset('dashboard_asset') }}/js/ckeditor.js"></script>
+        <script src="{{ asset('dashboard_asset') }}/js/ckeditor-custom.js"></script>
 
         <!-- Sweetalert2 js -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

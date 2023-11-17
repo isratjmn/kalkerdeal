@@ -4,14 +4,14 @@ use App\Http\Controllers\BackendController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GithubController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfilleController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
 
-Route::get('/', [FrontendController::class, 'welcome'])-> name('index');
+Route::get('/', [FrontendController::class, 'welcome'])->name('index');
 Route::get('about', [FrontendController::class, 'about']);
 Route::get('contact', [FrontendController::class, 'contact']);
 
@@ -39,6 +39,11 @@ Route::get('github/callback', [GithubController::class, 'callback'])->name('gith
 
 Route::get('google/redirect', [GoogleController::class, 'redirect'])->name('google.redirect');
 Route::get('google/callback', [GoogleController::class, 'callback'])->name('google.callback');
+
+Route::get('product', [ProductController::class, 'index'])->name('product.index');
+Route::get('product/create', [ProductController::class, 'create'])->name('product.create');
+Route::get('product/store', [ProductController::class, 'store'])->name('product.store');
+Route::resource('product', ProductController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

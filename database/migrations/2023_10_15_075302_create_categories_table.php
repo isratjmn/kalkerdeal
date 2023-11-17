@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 20)->unique();
+            $table->string('name', 100)->unique();
             $table->longText('description');
             $table->string('slug', 100)->unique();
             $table->string('category_thumbnail', 100)->default('defaultcategory.png');

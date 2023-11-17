@@ -23,14 +23,14 @@ class CategoryController extends Controller
     {
         $request->validate(
             [
-                'name' => 'required|max:20|unique:categories,name',
+                'name' => 'required|max:100|unique:categories,name',
                 'description' => 'required',
                 'category_thumbnail' => 'image'
 
             ],
             [
                 'name.required' => "Name Required",
-                'name.max' => "Name Should be max 20 Characters",
+                'name.max' => "Name Should be max 100 Characters",
                 'description.required' => "Description Required",
             ]
         );
@@ -43,7 +43,7 @@ class CategoryController extends Controller
             // Photo Upload Start
             $new_name = Str::lower(Str::random(20)) . '.' . $request->file('category_thumbnail')->extension();
             $photo_path = 'uploads/category_thumbnail/' . $new_name;
-            Image::make($request->file('category_thumbnail'))->resize(300, 200)->save($photo_path);
+            Image::make($request->file('category_thumbnail'))->resize(310, 300)->save($photo_path);
             // Photo Upload Ends
             // Database Upload Starts
             Category::find($category_id)->update([
