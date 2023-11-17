@@ -40,8 +40,7 @@
 
                                                 <td>
                                                     <img class="w-25"
-                                                        src="{{ asset('uploads/product_thumbnailzz') }}/{{ $product->product_thumbnail }}"
-                                                        alt="{{ $product->product_thumbnail }}">
+                                                        src="{{ asset('uploads/product_thumbnailzz') }}/{{ $product->product_thumbnail }}" alt="{{ $product->product_thumbnail }}">
                                                 </td>
                                                 <td>{{ $product->name }}</td>
                                                 <td>{{ $product->discounted_price }}</td>

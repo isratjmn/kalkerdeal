@@ -447,7 +447,7 @@
                 <div class="col-xl-8 ratio_65">
                     <div class="home-contain h-100">
                         <div class="h-100">
-                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/1.jpg"
+                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/banner.png"
                                 class="bg-img blur-up lazyload" alt="">
                         </div>
                         <div class="home-detail p-center-left w-75">
@@ -470,7 +470,7 @@
                     <div class="row g-4">
                         <div class="col-xl-12 col-md-6">
                             <div class="home-contain">
-                                <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/2.jpg"
+                                <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/side1.png"
                                     class="bg-img blur-up lazyload" alt="">
                                 <div class="home-detail p-center-left home-p-sm w-75">
                                     <div>
@@ -487,7 +487,7 @@
 
                         <div class="col-xl-12 col-md-6">
                             <div class="home-contain">
-                                <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/3.jpg"
+                                <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/side2.png"
                                     class="bg-img blur-up lazyload" alt="">
                                 <div class="home-detail p-center-left home-p-sm w-75">
                                     <div>
@@ -513,7 +513,7 @@
             <div class="banner-slider">
                 <div>
                     <div class="banner-contain hover-effect">
-                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/4.jpg"
+                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/bottom1.jpg"
                             class="bg-img blur-up lazyload" alt="">
                         <div class="banner-details">
                             <div class="banner-box">
@@ -529,7 +529,7 @@
 
                 <div>
                     <div class="banner-contain hover-effect">
-                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/5.jpg"
+                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/bottom2.png"
                             class="bg-img blur-up lazyload" alt="">
                         <div class="banner-details">
                             <div class="banner-box">
@@ -545,7 +545,7 @@
 
                 <div>
                     <div class="banner-contain hover-effect">
-                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/6.jpg"
+                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/bottom3.png"
                             class="bg-img blur-up lazyload" alt="">
                         <div class="banner-details">
                             <div class="banner-box">
@@ -561,7 +561,7 @@
 
                 <div>
                     <div class="banner-contain hover-effect">
-                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/7.jpg"
+                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/bottom4.png"
                             class="bg-img blur-up lazyload" alt="">
                         <div class="banner-details">
                             <div class="banner-box">
@@ -943,15 +943,16 @@
                     </div>
 
 
-                    <div class="category-slider-2 slick-carousel">
+                    <div class="category-slider-2 slick-carousel"
+                        style="display: flex; justify-content: space-between; align-items: center;">
                         @foreach ($categories as $category)
                             <div class="category-item"
-                                style="height: 230px; margin: 0 10px; text-align: center; background-color: #f2f2f2; padding: 5px;">
+                                style="height: 210px; margin: 0 10px; text-align: center; background-color: #f2f2f2; padding: 5px;">
                                 <a href="shop-left-sidebar.html" class="category-link"
                                     style="text-decoration: none; color: inherit; display: block;">
                                     <img src="{{ asset('uploads/category_thumbnail') }}/{{ $category->category_thumbnail }}"
-                                        class="category-image lazyload" alt="{{ $category->name }}"
-                                        style="width: 100%; height: 135px; object-fit: cover; border-radius: 2px; margin-bottom: 10px;">
+                                        class="category-image lazyload text-center" alt="{{ $category->name }}"
+                                        style="width: 95%; height: 110px; object-fit: cover; border-radius: 2px; margin-bottom: 10px;">
                                     <h5 class="category-name" style="font-size: 12px; font-weight: bold;">
                                         {{ $category->name }}</h5>
                                 </a>
@@ -972,7 +973,7 @@
                                         slidesToShow: 2,
                                     }
                                 },
-                    
+
                             ]
                         });
                     </script>
@@ -981,7 +982,7 @@
                         <div class="row g-md-4 g-3">
                             <div class="col-md-6">
                                 <div class="banner-contain hover-effect">
-                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/9.jpg"
+                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/img1.png"
                                         class="bg-img blur-up lazyload" alt="">
                                     <div class="banner-details p-center-left p-4">
                                         <div>
@@ -996,7 +997,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="banner-contain hover-effect">
-                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/10.jpg"
+                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/img2.png"
                                         class="bg-img blur-up lazyload" alt="">
                                     <div class="banner-details p-center-left p-4">
                                         <div>
@@ -1580,7 +1581,7 @@
 
                     <div class="section-t-space">
                         <div class="banner-contain">
-                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/15.jpg"
+                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/addvertise1.png"
                                 class="bg-img blur-up lazyload" alt="">
                             <div class="banner-details p-center p-4 text-white text-center">
                                 <div>
@@ -1595,7 +1596,7 @@
                         <div class="row g-md-4 g-3">
                             <div class="col-xxl-8 col-xl-12 col-md-7">
                                 <div class="banner-contain hover-effect">
-                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/12.jpg"
+                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/addvertise2.png"
                                         class="bg-img blur-up lazyload" alt="">
                                     <div class="banner-details p-center-left p-4">
                                         <div>
@@ -1614,7 +1615,7 @@
 
                             <div class="col-xxl-4 col-xl-12 col-md-5">
                                 <a href="shop-left-sidebar.html" class="banner-contain hover-effect h-100">
-                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/13.jpg"
+                                    <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/addvertise3.png"
                                         class="bg-img blur-up lazyload" alt="">
                                     <div class="banner-details p-center-left p-4 h-100">
                                         <div>
@@ -1884,7 +1885,7 @@
 
                     <div class="section-t-space">
                         <div class="banner-contain hover-effect">
-                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/14.jpg"
+                            <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/adv.png"
                                 class="bg-img blur-up lazyload" alt="">
                             <div class="banner-details p-center banner-b-space w-100 text-center">
                                 <div>
@@ -1914,7 +1915,7 @@
                             <div class="blog-box">
                                 <div class="blog-box-image">
                                     <a href="blog-detail.html" class="blog-image">
-                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/blog/1.jpg"
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/footbanner3.png"
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -1930,7 +1931,7 @@
                             <div class="blog-box">
                                 <div class="blog-box-image">
                                     <a href="blog-detail.html" class="blog-image">
-                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/blog/2.jpg"
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/footbanner1.png"
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -1946,7 +1947,7 @@
                             <div class="blog-box">
                                 <div class="blog-box-image">
                                     <a href="blog-detail.html" class="blog-image">
-                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/blog/3.jpg"
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/footbanner3.png"
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -1962,7 +1963,7 @@
                             <div class="blog-box">
                                 <div class="blog-box-image">
                                     <a href="blog-detail.html" class="blog-image">
-                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/blog/1.jpg"
+                                        <img src="{{ asset('frontend_asset') }}/images/vegetable/banner/footbanner4.png"
                                             class="bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
